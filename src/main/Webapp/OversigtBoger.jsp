@@ -69,7 +69,7 @@
         </thead>
         <tbody>
         <% List<Aftale> aftaler = DB.getAftale(cpr);
-            /* System.out.println(aftaler.size()); */
+            //System.out.println(aftaler.size());
             for(int i=0; i<aftaler.size(); i++) {
                 Aftale app = aftaler.get(i);
                 String Sygehus = app.getSygehus();
@@ -77,7 +77,7 @@
                 String Dato = app.getDato();
                 String Fritekst = app.getFritekst();
         %>
-        <!---- Her indsættes din tabel ---->
+        <!-- Her indsættes din tabel ---->
         <tr>
             <td> <% out.println(Dato); %></td>
             <td> <% out.print(Sygehus);%> </td>
