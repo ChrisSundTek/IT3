@@ -91,7 +91,7 @@
 </body>
 <footer>
     <div id="container2">
-        <a href="index.html">
+        <a href="Forside.jsp">
             <button id="button4" style="margin:45px;"> <font size="+0">Log ud </font> </button>
         </a>
     </div>

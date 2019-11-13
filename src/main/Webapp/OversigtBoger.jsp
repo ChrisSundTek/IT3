@@ -5,6 +5,9 @@
   Time: 21:59
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page import="DB" %>
+<%@ page import="Aftale" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,14 +37,16 @@
     </script>
 
 </head>
+<% String cpr = request.getParameter("cpr"); %>
+
 <body>
-<h1 align="center">
-    <b> Velkommen <span id="result"></span>
-        <script>
-            document.getElementById("result").innerHTML=localStorage.getItem("textvalue");
-        </script>
-    </b>
-</h1>
+<header>
+    <h1> <b>Velkommen: <%=cpr%> </b> </h1>
+</header>
+<%  DB db = new DB();
+
+
+%>
 
 <div id="container2"> <p align="center">
     <a href="Tidsbestilling.jsp">
@@ -49,18 +54,47 @@
     </a>
 </p> </div>
 <div id="booking">
-    <h4>
-        Her er dine nuværende bookinger:
-    </h4>
-    <script>
-        document.getElementById("code").innerHTML=localStorage.getItem(toString());
-    </script>
+    <h3>
+        Nuværende bookinger:
+    </h3>
+    <table style="width:100%">
+        <thead>
+        <tr>
+            <td> <b> Tidspunkt </b>  </td>
+            <td> <b> Sygehus </b> </td>
+            <td> <b> Afdeling </b> </td>
+            <td> <b> Besked </b> </td>
+            <td> <b> Undersøgelse </b> </td>
+        </tr>
+        </thead>
+        <tbody>
+        <% List<Aftale> aftaler = DB.getAftale(cpr);
+            /* System.out.println(aftaler.size()); */
+            for(int i=0; i<aftaler.size(); i++) {
+                Aftale app = aftaler.get(i);
+                String Sygehus = app.getSygehus();
+                String Type = app.getType();
+                String Dato = app.getDato();
+                String Fritekst = app.getFritekst();
+        %>
+        <!---- Her indsættes din tabel ---->
+        <tr>
+            <td> <% out.println(Dato); %></td>
+            <td> <% out.print(Sygehus);%> </td>
+            <td> Mangler </td>
+            <td> <% out.print(Fritekst); %> </td>
+            <td> <% out.println(Type); %> </td>
+
+        </tr>
+        <% }%>
+        </tbody>
+    </table>
 </div>
 
 </body>
 <footer>
-    <div id="container2">
-        <a href="index.html">
+    <div id="container4">
+        <a href="Forside.jsp">
             <button id="button4" style="margin:45px;"> <font size="+0">Log ud </font> </button>
         </a>
     </div>

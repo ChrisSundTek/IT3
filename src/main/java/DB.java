@@ -17,7 +17,7 @@ public class DB {
 
     public static List<Patient> getPatients() throws SQLException, ClassNotFoundException {
         Class.forName("org.mariadb.jdbc.Driver");
-        Connection connection = DriverManager.getConnection("jdbc:mariadb://su1.eduhost.dk:3306/server1?user=gruppe6&password=gruppe6");
+        Connection connection = DriverManager.getConnection("jdbc:mariadb://su6.eduhost.dk:3306/server1?user=christoffer&password=zaq12wsx");
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT * FROM Patient;");
         connection.close();
@@ -28,7 +28,7 @@ public class DB {
 
     public static List<Aftale> getAftale(String cpr) throws SQLException, ClassNotFoundException {
         Class.forName("org.mariadb.jdbc.Driver");
-        Connection connection = DriverManager.getConnection("jdbc:mariadb://su1.eduhost.dk:3306/server1?user=gruppe6&password=gruppe6");
+        Connection connection = DriverManager.getConnection("jdbc:mariadb://su6.eduhost.dk:3306/server1?user=christoffer&password=zaq12wsx");
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT * FROM Aftale WHERE Patient = '" + cpr + "';");
         connection.close();
@@ -39,7 +39,7 @@ public class DB {
 
     public static Boolean validering(String cpr, String password) throws SQLException, ClassNotFoundException {
         Class.forName("org.mariadb.jdbc.Driver");
-        Connection connection = DriverManager.getConnection("jdbc:mariadb://su1.eduhost.dk:3306/server1?user=gruppe6&password=gruppe6");
+        Connection connection = DriverManager.getConnection("jdbc:mariadb://su6.eduhost.dk:3306/server1?user=christoffer&password=zaq12wsx");
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT * FROM Patient WHERE CPR ='"+ cpr +"';");
         resultSet.next();

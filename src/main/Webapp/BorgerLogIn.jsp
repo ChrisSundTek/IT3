@@ -64,9 +64,9 @@
 <body>
 <h1 id="heading1"> <b> Velkommen til login </b> </h1>
 <div id="container3">
-    <form id="myForm" name="form" type ='post' action='/hello'>
-        <input id="input1" placeholder="Indtast CPR" name="CPR" required/>
-        <input id="input2" type="password" placeholder="Indtast Password" name="Password" required/>
+    <form action="servertest" method="post">
+        <input id="CPRnummer" type="number" placeholder="Indtast CPR" name="CPR" required/>
+        <input id="password" type="password" placeholder="Indtast Password" name="Password" required/>
         <input type="submit" value="Submit">
     </form>
 
@@ -74,7 +74,7 @@
 </body>
 <footer>
     <div id="container2">
-        <a href="index.html">
+        <a href="Forside.jsp">
             <button id="button4" style="margin:45px;"> <font size="+0">Tilbage til forsiden </font> </button>
         </a>
     </div>
