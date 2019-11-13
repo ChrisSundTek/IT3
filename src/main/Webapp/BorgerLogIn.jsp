@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: chris
   Date: 13-11-2019
-  Time: 21:50
+  Time: 21:59
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ændre  booking</title>
+    <title>Log Ind</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="http://designer.igniteui.com/packages/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="http://designer.igniteui.com/css/themes/infragistics/infragistics.theme.css">
@@ -30,52 +30,52 @@
     <!-- You may remove the datasources.js script if you are not using Designer sample data. -->
     <script src="http://designer.igniteui.com/js/datasources.js"></script>
 
-
     <script id="code">
         $(document).ready(function () {
-
         });
     </script>
 
 
+    <script>
+        function passvalues() {
+            var navn = document.getElementById("input1").value;
+            localStorage.setItem("textvalue",navn);
+            return false;
+        }
+    </script>
+    <script type= "text/javascript">
+        function login() {
+            var navn = document.getElementById("Navn").value;
+            var kode = document.getElementById("password").value;
+            if( navn== "lab18" && kode == "lab18") {
+                alert("Login Godkendt")
+                locate="OversigtPersonale.jsp"
+                return false;
+            } else {
+                alert("Forkert brugernavn/password");
+                return false;
+            }
 
+        }
+    </script>
 
 
 </head>
 <body>
-
-<h2 id="heading1"> <b> #Patientsnavn </b> </h2>
-<div id="container1">
-    <p id="text1"><b>Ændre tidspunkt eller aflys ved at vælge tid og trykke knappen</b> </p>
-
-</div>
+<h1 id="heading1"> <b> Velkommen til login </b> </h1>
 <div id="container3">
-    <h5 id="text2">Vælg din booking</h5>
-</div>
-<div id="container4"> <font size="+1">
-    <select>
-        <option value="Booking1">Booking 1</option>
-        <option value="Booking2">Booking 2</option>
-        <option value="Booking3">Booking 3</option>
-        <option value="Booking4">Booking 4</option>
-    </select>
-</font>
-</div>
-<div id="container5">
-    <a href="OversigtBorger.jsp">
-        <button id="button1">Aflys booking </button>
-    </a>
-    <a href="Tidsbestilling.jsp">
-        <button style="margin:20px;" id="button2">Ændre eksisterende booking</button>
-    </a>
-    <!--Når der trykkes ændre slettes tiden også, man bliver bare viderestillet til Tidsbestlling siden -->
-</div>
+    <form id="myForm" name="form" type ='post' action='/hello'>
+        <input id="input1" placeholder="Indtast CPR" name="CPR" required/>
+        <input id="input2" type="password" placeholder="Indtast Password" name="Password" required/>
+        <input type="submit" value="Submit">
+    </form>
 
+</div>
 </body>
 <footer>
     <div id="container2">
         <a href="index.html">
-            <button id="button4" style="margin:45px;"> <font size="+0">Log ud </font> </button>
+            <button id="button4" style="margin:45px;"> <font size="+0">Tilbage til forsiden </font> </button>
         </a>
     </div>
 </footer>

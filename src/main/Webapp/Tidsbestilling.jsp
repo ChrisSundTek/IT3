@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: chris
   Date: 13-11-2019
-  Time: 21:50
+  Time: 22:00
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -10,14 +10,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ændre  booking</title>
+    <title>Bestilling af tid</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="http://designer.igniteui.com/packages/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="http://designer.igniteui.com/css/themes/infragistics/infragistics.theme.css">
     <link rel="stylesheet" href="http://designer.igniteui.com/css/structure/infragistics.css">
-
-
-    <link rel="stylesheet" type="text/css" href="style.css">
     <!--
         Update the Ignite UI script references to your licensed copies before deploying.
         Ignite UI License: http://www.infragistics.com/legal/license/ultimate/
@@ -29,46 +26,66 @@
     <script src="http://designer.igniteui.com/js/infragistics.lob.js"></script>
     <!-- You may remove the datasources.js script if you are not using Designer sample data. -->
     <script src="http://designer.igniteui.com/js/datasources.js"></script>
-
-
     <script id="code">
         $(document).ready(function () {
+            $("#datePicker1").igDatePicker({
+                dateDisplayFormat: "d/M/yyyy",
+                dataMode: "displayModeText",
+                minDate: "dateToday",
+            });
+            $("#timePicker1").igTimePicker({
+                timeInputFormat: "HH:mm",
+                itemsDelta: {
+                    minutes: 15
+                },
+                dropDownOnReadOnly: false,
+                buttonType: "dropdown",
+                "maxValue": "16:45",
+                "minValue": "08:00",
+                toUpper: false
+            });
+
+            $("#datePicker2").igDatePicker({
+            });
 
         });
     </script>
+    <style>
+        body {
+            background-color: #D7FBFF;
+            margin:10px;
+        }
 
-
-
-
-
+    </style>
+    <!--ved at tilføje style og body kan man ændre baggrunds farve-->
 </head>
 <body>
 
-<h2 id="heading1"> <b> #Patientsnavn </b> </h2>
+<h2 id="heading1" style="color:#000000;"> <b> #Patientsnavn </b> </h2>
 <div id="container1">
-    <p id="text1"><b>Ændre tidspunkt eller aflys ved at vælge tid og trykke knappen</b> </p>
+    <p id="text1"><b>Bestil tid ved at vælge dato og tidspunkt.</b> </p>
 
 </div>
 <div id="container3">
-    <h5 id="text2">Vælg din booking</h5>
+    <p id="text2">Tryk accepter når du færdig</p>
 </div>
-<div id="container4"> <font size="+1">
-    <select>
-        <option value="Booking1">Booking 1</option>
-        <option value="Booking2">Booking 2</option>
-        <option value="Booking3">Booking 3</option>
-        <option value="Booking4">Booking 4</option>
-    </select>
-</font>
+<div id="container4">
+    <p id="text3"> Vælg dato</p>
+</div>
+<div id="datePicker1">
 </div>
 <div id="container5">
-    <a href="OversigtBorger.jsp">
-        <button id="button1">Aflys booking </button>
-    </a>
-    <a href="Tidsbestilling.jsp">
+    <p id="text4">Vælg tidspunkt</p>
+</div>
+<div id="timePicker1">
+</div>
+<a href="BekræftelseOversigt.jsp">
+    <button id="button1"><b>Accepter</b></button>
+</a>
+<div id="container6">
+    <a href="AendreTid.jsp">
         <button style="margin:20px;" id="button2">Ændre eksisterende booking</button>
     </a>
-    <!--Når der trykkes ændre slettes tiden også, man bliver bare viderestillet til Tidsbestlling siden -->
 </div>
 
 </body>
@@ -80,4 +97,3 @@
     </div>
 </footer>
 </html>
-
