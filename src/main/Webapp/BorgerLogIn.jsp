@@ -48,9 +48,7 @@
         <br>
     <input id="password" type="password" placeholder="Password" name="Password" required />
         <br>
-        <span style="padding-bottom:20px">
-    <input type="submit" value="Log ind"/>
-        </span>
+    <input style="margin-top:20px" font size="+1" type="submit" value="Log ind"/>
 
     </form>
 
