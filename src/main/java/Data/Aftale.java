@@ -1,3 +1,5 @@
+package Data;
+
 public class Aftale {
     private String Patient;
     private String Type;

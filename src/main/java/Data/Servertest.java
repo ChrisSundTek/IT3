@@ -1,3 +1,7 @@
+package Data;
+
+import Data.DB;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,7 +34,7 @@ public class Servertest extends HttpServlet {
         }
         //System.out.println("her kommer brugeren med cpr "+ CPR + " password " + Password);
         if(validering) {
-            resp.sendRedirect("OversigtBorger.jsp"+ CPR);
+            resp.sendRedirect("OversigtBorger.jsp?cpr="+ CPR);
         }
         else {
             resp.sendRedirect("BorgerLogIn.jsp");

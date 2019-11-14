@@ -51,7 +51,6 @@
     <input style="margin-top:20px" font size="+1" type="submit" value="Log ind"/>
 
     </form>
-
 </div>
 </body>
 <footer>

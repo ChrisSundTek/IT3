@@ -56,7 +56,7 @@
 </head>
 <body>
 
-<h2 id="heading1" style="color:#000000;"> <b> #Patientsnavn </b> </h2>
+<h2 id="heading1" style="color:#000000;"> <b> <% String cpr = request.getParameter("cpr"); %> </b> </h2>
 <div id="container1">
     <p id="text1"><b>Bestil tid ved at vælge dato og tidspunkt.</b> </p>
 
@@ -74,7 +74,7 @@
 </div>
 <div id="timePicker1">
 </div>
-<a href="BekræftelseOversigt.jsp">
+<a href="BekraeftelseOversigt.jsp">
     <button id="button1"><b>Accepter</b></button>
 </a>
 <div id="container6">

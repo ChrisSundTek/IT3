@@ -1,3 +1,7 @@
+package Data;
+
+import Data.Aftale;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +50,7 @@ public class DB {
         String c = resultSet.getString("CPR");
         String p = resultSet.getString("Password");
         connection.close();
-        //System.out.println("Jeg validerer");
+        System.out.println("Jeg validerer");
         if (cpr.equals(c) && password.equals(p)) {
             return true;
         }
