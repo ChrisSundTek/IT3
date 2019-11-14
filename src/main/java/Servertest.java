@@ -30,10 +30,10 @@ public class Servertest extends HttpServlet {
         }
         //System.out.println("her kommer brugeren med cpr "+ CPR + " password " + Password);
         if(validering) {
-            resp.sendRedirect("booking.jsp?cpr="+ CPR);
+            resp.sendRedirect("OversigtBorger.jsp"+ CPR);
         }
         else {
-            resp.sendRedirect("login.jsp");
+            resp.sendRedirect("BorgerLogIn.jsp");
         }
     }
 }

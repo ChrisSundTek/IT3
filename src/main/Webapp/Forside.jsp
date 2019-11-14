@@ -7,6 +7,8 @@
 --%>
 <!DOCTYPE html>
 <html lang="en">
+
+<link href="Baggrund.css" rel="stylesheet" type="text/css">
 <head>
     <meta charset="UTF-8">
     <title>Velkommen</title>

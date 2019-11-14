@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="http://designer.igniteui.com/css/structure/infragistics.css">
 
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="Baggrund.css" rel="stylesheet" type="text/css">
     <!--
         Update the Ignite UI script references to your licensed copies before deploying.
         Ignite UI License: http://www.infragistics.com/legal/license/ultimate/
@@ -35,39 +35,23 @@
         });
     </script>
 
-
-    <script>
-        function passvalues() {
-            var navn = document.getElementById("input1").value;
-            localStorage.setItem("textvalue",navn);
-            return false;
-        }
-    </script>
-    <script type= "text/javascript">
-        function login() {
-            var navn = document.getElementById("Navn").value;
-            var kode = document.getElementById("password").value;
-            if( navn== "lab18" && kode == "lab18") {
-                alert("Login Godkendt")
-                locate="OversigtPersonale.jsp"
-                return false;
-            } else {
-                alert("Forkert brugernavn/password");
-                return false;
-            }
-
-        }
-    </script>
-
-
 </head>
 <body>
 <h1 id="heading1"> <b> Velkommen til login </b> </h1>
 <div id="container3">
-    <form id="myForm" name="form" type ='post' action='/hello'>
-        <input id="input1" placeholder="Indtast CPR" name="CPR" required/>
-        <input id="input2" type="password" placeholder="Indtast Password" name="Password" required/>
-        <input type="submit" value="Submit">
+    <form action="servertest" method="post">
+
+    CPR-NUMMER:<br>
+    <input type="number" id="CPRnummer" placeholder="CPR" required name="CPR" />
+    <br>
+        PASSWORD:
+        <br>
+    <input id="password" type="password" placeholder="Password" name="Password" required />
+        <br>
+        <span style="padding-bottom:20px">
+    <input type="submit" value="Log ind"/>
+        </span>
+
     </form>
 
 </div>
