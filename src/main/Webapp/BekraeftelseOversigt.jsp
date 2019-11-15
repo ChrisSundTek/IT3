@@ -29,11 +29,7 @@
     <script src="http://designer.igniteui.com/js/infragistics.lob.js"></script>
     <!-- You may remove the datasources.js script if you are not using Designer sample data. -->
     <script src="http://designer.igniteui.com/js/datasources.js"></script>
-    <script id="code">
-        $(document).ready(function () {
 
-        });
-    </script>
 </head>
 <body>
 <h2 id="heading1"> <b> #Patientnavn </b></h2>

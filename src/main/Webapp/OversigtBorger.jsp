@@ -54,7 +54,9 @@
 
     %>
     <h4>
-        Her er dine nuværende bookinger:
+        Kommende besøgstider:
+        <br>
+        <br>
         <table style="width:100%">
             <thead>
             <tr>

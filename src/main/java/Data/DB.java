@@ -85,6 +85,7 @@ public class DB {
             aftale.setDato(dato);
             aftale.setFritekst(fritekst);
             aftaler.add(aftale);
+            System.out.println("Jeg kan se min aftaler");
             System.out.println(patient + " har en aftale på sygehus " + sygehus + " til undersøgelse i " + type + " den "+ dato);
         }
         return aftaler;
