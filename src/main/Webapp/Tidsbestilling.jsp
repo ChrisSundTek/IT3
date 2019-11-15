@@ -47,36 +47,71 @@
                 toUpper: false
             });
 
-            $("#datePicker2").igDatePicker({
-            });
-
         });
     </script>
 
 </head>
 <body>
 
-<h2 id="heading1" style="color:#000000;"> <b> <% String cpr = request.getParameter("cpr"); %> </b> </h2>
+<h2 id="heading1" style="color:#000000;"> <b> Vælg din tid </b> </h2>
 <div id="container1">
-    <p id="text1"><b>Bestil tid ved at vælge dato og tidspunkt.</b> </p>
+    <p id="text1"><b>Bestil tid ved at vælge Dato, tid, hospital og hvilken undersøgelse du skal have</b> </p>
 
 </div>
 <div id="container3">
     <p id="text2">Tryk accepter når du færdig</p>
 </div>
 <div id="container4">
-    <p id="text3"> Vælg dato</p>
-</div>
+    <b> Vælg dato </b>
+    <br>
 <div id="datePicker1">
 </div>
-<div id="container5">
-    <p id="text4">Vælg tidspunkt</p>
-</div>
+    <br>
+    <b> Vælg tidspunkt </b>
+    <br>
 <div id="timePicker1">
 </div>
+    <br>
+    <form>
+        <p>
+            <label>Hospital
+                <br>
+                <select id="hospital" name="hospital">
+                    <option value="" selected="selected">Vælg hospital</option>
+                    <option value="4"> Hospital 4</option>
+                    <option value="6"> Hospital 6</option>
+                </select>
+            </label>
+        </p>
+    </form>
+</div>
+<div>
+    <form>
+        <p>
+            <label>Undersøgelse
+                <br>
+                <select id="undersøgelse" name="undersøglese">
+                    <option value="" selected="selected">Vælg Undersøgelse</option>
+                    <option value="BIOPSI"> Vævsprøve </option>
+                    <option value="BP"> Blodprøve </option>
+                    <option value="CT"> CT scanning </option>
+                    <option value="EEG"> Elektroencefalografi </option>
+                    <option value="EKG"> Elektrokardiografi </option>
+                    <option value="ENDOSP"> Endoskopi </option>
+                    <option value="MR"> MR scanning </option>
+                    <option value="PetCT"> Pet og CT scanning </option>
+                    <option value="RTG"> Røntgen </option>
+                    <option value="ULSC"> Ultralyd </option>
+                </select>
+            </label>
+        </p>
+    </form>
+</div>
+<div id="container5">
 <a href="BekraeftelseOversigt.jsp">
     <button id="button1"><b>Accepter</b></button>
 </a>
+</div>
 <div id="container6">
     <a href="AendreTid.jsp">
         <button style="margin:20px;" id="button2">Ændre eksisterende booking</button>
@@ -86,8 +121,8 @@
 </body>
 <footer>
     <div id="container2">
-        <a href="index.html">
-            <button id="button4" style="margin:45px;"> <font size="+0">Log ud </font> </button>
+        <a href="OversigtBorger.jsp">
+            <button id="button4" style="margin:30px;"> <font size="+0">Tilbage til Oversigt </font> </button>
         </a>
     </div>
 </footer>

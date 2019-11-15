@@ -1,7 +1,5 @@
 package Data;
 
-import Data.Aftale;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +54,16 @@ public class DB {
         }
         return false;
     }
+   /* public createAppointment() throws SQLException, ClassNotFoundException {
+        Class.forName("org.mariadb.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mariadb://su6.eduhost.dk:3306/db6?user=christoffer&password=zaq12wsx");
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery("INSERT * INTO Aftale );
+        connection.close();
+        //List<Aftale> aftaler = parseResultsetToAftaler(resultSet);
+        System.out.println("Jeg opretter");
+        //return Appointment;
+    } */
 
     private static List<Patient> parseResultsetToPatient(ResultSet resultSet) throws SQLException {
         List<Patient> patients = new ArrayList<>();
