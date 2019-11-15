@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<h2 id="heading1" style="color:#000000;"> <b> Vælg din tid </b> </h2>
+<h2 style="color:#000000;"> <b> Bestil tid </b> </h2>
 <div id="container1">
     <p id="text1"><b>Bestil tid ved at vælge Dato, tid, hospital og hvilken undersøgelse du skal have</b> </p>
 

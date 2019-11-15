@@ -8,9 +8,9 @@
 <%@ page import="Data.DB" %>
 <%@ page import="Data.Aftale" %>
 <%@ page import="java.util.List" %>
+<%@ page import="Data.Typer" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -32,74 +32,154 @@
     <script src="http://designer.igniteui.com/js/infragistics.lob.js"></script>
     <!-- You may remove the datasources.js script if you are not using Designer sample data. -->
     <script src="http://designer.igniteui.com/js/datasources.js"></script>
+    <script id="code">
+        $(document).ready(function () {
+            $("#datePicker1").igDatePicker({
+                dateDisplayFormat: "d/M/yyyy",
+                dataMode: "displayModeText",
+                minDate: "dateToday",
+            });
+            $("#timePicker1").igTimePicker({
+                timeInputFormat: "HH:mm",
+                itemsDelta: {
+                    minutes: 15
+                },
+                dropDownOnReadOnly: false,
+                buttonType: "dropdown",
+                "maxValue": "16:45",
+                "minValue": "08:00",
+                toUpper: false
+            });
 
+        });
+    </script>
+    <%  DB db = new DB();
 
+    %>
 </head>
 <% String cpr = request.getParameter("cpr"); %>
 <body>
 <h1 align="center">
-    <b> Velkommen <%=cpr%>
-    </b>
+    <b> Velkommen <%=cpr%> </b>
 </h1>
+<hr style="height: 5px; border: 0px solid #000000; border-top-width: 1px;" />
+<h4>
+    Kommende besøgstider:
+    <br>
+    <br>
+    <table style="width:100%">
+        <thead>
+        <tr>
+            <td> <b> Dato og Tidspunkt </b>  </td>
+            <td> <b> Sygehus </b> </td>
+            <td> <b> Afdeling </b> </td>
+            <td> <b> Besked </b> </td>
+            <td> <b> Undersøgelse </b> </td>
+            <td> <b> Varighed </b></td>
+        </tr>
+        </thead>
+        <tbody>
+        <% List<Aftale> aftaler = DB.getAftale(cpr);
+            /* System.out.println(aftaler.size()); */
+            for(int i=0; i<aftaler.size(); i++) {
+                Aftale app = aftaler.get(i);
+                String Sygehus = app.getSygehus();
+                String Type = app.getType();
+                String Dato = app.getDato();
+                String Fritekst = app.getFritekst();
+        %>
+        <% List<Typer> typer = DB.getTyper();
+            for(int l=0; l<typer.size(); l++) {
+                Typer place = typer.get(l);
+                String Afdeling = place.getAfdeling();
+                String Aftaletype = place.getAftaletype();
+                String Varighed = place.getVarighed();
+        %>
+        <!---- Her indsættes din tabel ---->
+        <tr>
+            <td> <% out.println(Dato); %></td>
+            <td> <% out.print(Sygehus);%> </td>
+            <td> <% out.print(Afdeling);%> </td>
+            <td> <% out.print(Fritekst); %> </td>
+            <td> <% out.println(Aftaletype); %> </td>
+            <td> <% out.print(Varighed);%> </td>
 
-<div id="container2"> <p align="center">
-    <a href="Tidsbestilling.jsp">
-        <button id="button1"> <font size="+2">Tidsbestilling </font> </button>
-    </a>
-</p> </div>
-<div id="booking">
-</div>
-<%  DB db = new DB();
-
-
-    %>
-    <h4>
-        Kommende besøgstider:
+        </tr>
+        <% }%>
+        <% }%>
+        </tbody>
+    </table>
+</h4>
+<hr style="height: 5px; border: 0px solid #000000; border-top-width: 1px;" />
+    <h4 style="color:#000000;"> <b> Bestil tid </b> </h4>
+    <div id="container1">
+        Bestil tid ved at vælge dato, tid, hospital og hvilken undersøgelse du skal have og tryk accepter for at bestille din tid
+    </div>
+    <div id="container2">
+        <b> Vælg dato </b>
         <br>
+        <div id="datePicker1">
+        </div>
         <br>
-        <table style="width:100%">
-            <thead>
-            <tr>
-                <td> <b> Dato og Tidspunkt </b>  </td>
-                <td> <b> Sygehus </b> </td>
-                <td> <b> Afdeling </b> </td>
-                <td> <b> Besked </b> </td>
-                <td> <b> Undersøgelse </b> </td>
-                <td> <b> Varighed </b></td>
-            </tr>
-            </thead>
-            <tbody>
-            <% List<Aftale> aftaler = DB.getAftale(cpr);
-                /* System.out.println(aftaler.size()); */
-                for(int i=0; i<aftaler.size(); i++) {
-                    Aftale app = aftaler.get(i);
-                    String Sygehus = app.getSygehus();
-                    String Type = app.getType();
-                    String Dato = app.getDato();
-                    String Fritekst = app.getFritekst();
-            %>
-            <!---- Her indsættes din tabel ---->
-            <tr>
-                <td> <% out.println(Dato); %></td>
-                <td> <% out.print(Sygehus);%> </td>
-                <td> Mangler </td>
-                <td> <% out.print(Fritekst); %> </td>
-                <td> <% out.println(Type); %> </td>
-                <td> Mangler </td>
-
-            </tr>
-            <% }%>
-            </tbody>
-        </table>
-    </h4>
-</div>
-
-</body>
-<footer>
-    <div id="container5">
-        <a href="index.html">
-            <button id="button4" style="margin:45px;"> <font size="+0">Log ud </font> </button>
+        <b> Vælg tidspunkt </b>
+        <br>
+        <div id="timePicker1">
+        </div>
+        <form>
+            <p>
+                <br>
+                <label>Hospital
+                    <br>
+                    <select id="hospital" name="hospital">
+                        <option value="" selected="selected">Vælg hospital</option>
+                        <option value="4"> Hospital 4</option>
+                        <option value="6"> Hospital 6</option>
+                    </select>
+                </label>
+            </p>
+        </form>
+    </div>
+    <div>
+        <form>
+            <p>
+                <label>Undersøgelse
+                    <br>
+                    <select id="undersøgelse" name="undersøglese">
+                        <option value="" selected="selected">Vælg Undersøgelse</option>
+                        <option value="BIOPSI"> Vævsprøve </option>
+                        <option value="BP"> Blodprøve </option>
+                        <option value="CT"> CT scanning </option>
+                        <option value="EEG"> Elektroencefalografi </option>
+                        <option value="EKG"> Elektrokardiografi </option>
+                        <option value="ENDOSP"> Endoskopi </option>
+                        <option value="MR"> MR scanning </option>
+                        <option value="PetCT"> Pet og CT scanning </option>
+                        <option value="RTG"> Røntgen </option>
+                        <option value="ULSC"> Ultralyd </option>
+                    </select>
+                </label>
+            </p>
+        </form>
+    </div>
+<br>
+    <div id="container3">
+        <a href="BekraeftelseOversigt.jsp">
+            <button id="button1"><b>Accepter</b></button>
         </a>
     </div>
-</footer>
+<br>
+    <div id="container4">
+        <a href="AendreTid.jsp">
+            <button id="button2">Ændre eksisterende booking</button>
+        </a>
+    </div>
+</body>
+<br>
+    <footer>
+        <div id="container5">
+            <a href="Forside.jsp">
+                <button id="button4"> <font size="+0">Log ud </font> </button>
+            </a>
+        </div>
+    </footer>
 </html>

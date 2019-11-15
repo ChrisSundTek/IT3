@@ -44,6 +44,7 @@
     CPR-NUMMER:<br>
     <input type="number" id="CPRnummer" placeholder="CPR" required name="CPR" />
     <br>
+        <br>
         PASSWORD:
         <br>
     <input id="password" type="password" placeholder="Password" name="Password" required />
@@ -54,9 +55,12 @@
 </div>
 </body>
 <footer>
+    <br>
+    <br>
+    <br>
     <div id="container2">
         <a href="index.html">
-            <button id="button4" style="margin:45px;"> <font size="+0">Tilbage til forsiden </font> </button>
+            <button id="button4"> <font size="+0">Tilbage til forsiden </font> </button>
         </a>
     </div>
 </footer>

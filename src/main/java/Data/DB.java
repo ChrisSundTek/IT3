@@ -38,7 +38,16 @@ public class DB {
         System.out.println("Der er Aftaler");
         return aftaler;
     }
-
+    public static List<Typer> getTyper() throws SQLException, ClassNotFoundException {
+        Class.forName("org.mariadb.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mariadb://su6.eduhost.dk:3306/db6?user=christoffer&password=zaq12wsx");
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM Typer WHERE Aftaletype;");
+        connection.close();
+        List<Typer> typer = parseResultsetToTyper(resultSet);
+        System.out.println("Der er en type");
+        return typer;
+    }
     public static Boolean validering(String cpr, String password) throws SQLException, ClassNotFoundException {
         Class.forName("org.mariadb.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mariadb://su6.eduhost.dk:3306/db6?user=christoffer&password=zaq12wsx");
@@ -54,16 +63,6 @@ public class DB {
         }
         return false;
     }
-   /* public createAppointment() throws SQLException, ClassNotFoundException {
-        Class.forName("org.mariadb.jdbc.Driver");
-        Connection connection = DriverManager.getConnection("jdbc:mariadb://su6.eduhost.dk:3306/db6?user=christoffer&password=zaq12wsx");
-        Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery("INSERT * INTO Aftale );
-        connection.close();
-        //List<Aftale> aftaler = parseResultsetToAftaler(resultSet);
-        System.out.println("Jeg opretter");
-        //return Appointment;
-    } */
 
     private static List<Patient> parseResultsetToPatient(ResultSet resultSet) throws SQLException {
         List<Patient> patients = new ArrayList<>();
@@ -94,8 +93,24 @@ public class DB {
             aftale.setFritekst(fritekst);
             aftaler.add(aftale);
             System.out.println("Jeg kan se min aftaler");
-            System.out.println(patient + " har en aftale på sygehus " + sygehus + " til undersøgelse i " + type + " den "+ dato);
+            //System.out.println(patient + " har en aftale på sygehus " + sygehus + " til undersøgelse i " + type + " den "+ dato);
         }
         return aftaler;
+    }
+    private static List<Typer> parseResultsetToTyper(ResultSet resultSet) throws SQLException {
+        List<Typer> typers = new ArrayList<>();
+        while (resultSet.next()) {
+            Typer typer = new Typer();
+            String aftaletype = resultSet.getString("Aftaletype");
+            String varighed = resultSet.getString("Varighed");
+            String afdeling = resultSet.getString("Afdeling");
+            typer.setAftaletype(aftaletype);
+            typer.setAfdeling(afdeling);
+            typer.setVarighed(varighed);
+            typers.add(typer);
+            System.out.println("Jeg kan se min aftaler");
+            //System.out.println(patient + " har en aftale på sygehus " + sygehus + " til undersøgelse i " + type + " den "+ dato);
+        }
+        return typers;
     }
 }
