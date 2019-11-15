@@ -65,6 +65,7 @@
                 <td> <b> Afdeling </b> </td>
                 <td> <b> Besked </b> </td>
                 <td> <b> Undersøgelse </b> </td>
+                <td> <b> Varighed </b></td>
             </tr>
             </thead>
             <tbody>
@@ -84,6 +85,7 @@
                 <td> Mangler </td>
                 <td> <% out.print(Fritekst); %> </td>
                 <td> <% out.println(Type); %> </td>
+                <td> Mangler </td>
 
             </tr>
             <% }%>
