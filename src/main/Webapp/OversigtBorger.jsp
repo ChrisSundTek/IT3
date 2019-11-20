@@ -87,26 +87,22 @@
                 String Type = app.getType();
                 String Dato = app.getDato();
                 String Fritekst = app.getFritekst();
+                Typer typen = DB.getTyper(Type);
+                String Afdeling = typen.getAfdeling();
+                String Varighed = typen.getVarighed();
         %>
-        <% /*List<Typer> typer = DB.getTyper();
-            for(int l=0; l<typer.size(); l++) {
-                Typer place = typer.get(l);
-                String Afdeling = place.getAfdeling();
-                String Aftaletype = place.getAftaletype();
-                String Varighed = place.getVarighed(); */
-        %>
+
         <!---- Her indsættes din tabel ---->
         <tr>
             <td> <% out.println(Dato); %></td>
             <td> <% out.print(Sygehus);%> </td>
-            <td> Mangler <% //out.print(Afdeling);%> </td>
+            <td> <% out.print(Afdeling);%> </td>
             <td> <% out.print(Fritekst); %> </td>
             <td> <% out.println(Type); %> </td>
-            <td> Mangler <% //out.print(Varighed);%> </td>
+            <td> <% out.print(Varighed);%> </td>
 
         </tr>
         <% }%>
-        <%// }%>
         </tbody>
     </table>
 </h4>
@@ -163,8 +159,8 @@
     </div>
 <br>
     <div id="container3">
-        <a href="BekraeftelseOversigt.jsp">
-            <button id="button1"><b>Accepter</b></button>
+        <a href="BekraeftelseOversigt.jsp"> <b>
+            <input  type="submit" value="Accepter"/> </b>
         </a>
     </div>
 <br>
@@ -177,7 +173,7 @@
 <br>
     <footer>
         <div id="container5">
-            <a href="Forside.jsp">
+            <a href="index.html">
                 <button id="button4"> <font size="+0">Log ud </font> </button>
             </a>
         </div>

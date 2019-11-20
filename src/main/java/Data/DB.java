@@ -38,14 +38,15 @@ public class DB {
         System.out.println("Der er Aftaler");
         return aftaler;
     }
-    public static List<Typer> getTyper() throws SQLException, ClassNotFoundException {
+    public static Typer getTyper(String type) throws SQLException, ClassNotFoundException {
         Class.forName("org.mariadb.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mariadb://su6.eduhost.dk:3306/db6?user=christoffer&password=zaq12wsx");
         Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery("SELECT * FROM Typer WHERE Aftaletype;");
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM Typer WHERE Aftaletype ='"+type+"';");
         connection.close();
-        List<Typer> typer = parseResultsetToTyper(resultSet);
-        System.out.println("Der er en type");
+
+        Typer typer = parseResultsetToTyper(resultSet);
+        //System.out.println("Der er en type");
         return typer;
     }
     public static Boolean validering(String cpr, String password) throws SQLException, ClassNotFoundException {
@@ -92,25 +93,23 @@ public class DB {
             aftale.setDato(dato);
             aftale.setFritekst(fritekst);
             aftaler.add(aftale);
-            System.out.println("Jeg kan se min aftaler");
+            //System.out.println("Jeg kan se min aftaler");
             //System.out.println(patient + " har en aftale på sygehus " + sygehus + " til undersøgelse i " + type + " den "+ dato);
         }
         return aftaler;
     }
-    private static List<Typer> parseResultsetToTyper(ResultSet resultSet) throws SQLException {
-        List<Typer> typers = new ArrayList<>();
+    private static Typer parseResultsetToTyper(ResultSet resultSet) throws SQLException {
+        Typer typer = new Typer();
         while (resultSet.next()) {
-            Typer typer = new Typer();
             String aftaletype = resultSet.getString("Aftaletype");
             String varighed = resultSet.getString("Varighed");
             String afdeling = resultSet.getString("Afdeling");
             typer.setAftaletype(aftaletype);
             typer.setAfdeling(afdeling);
             typer.setVarighed(varighed);
-            typers.add(typer);
             System.out.println("Jeg kan se min aftaler");
             //System.out.println(patient + " har en aftale på sygehus " + sygehus + " til undersøgelse i " + type + " den "+ dato);
         }
-        return typers;
+        return typer;
     }
 }
