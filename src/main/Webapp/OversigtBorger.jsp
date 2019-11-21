@@ -111,12 +111,12 @@
     <div id="container1">
         Bestil tid ved at vælge dato, tid, hospital og hvilken undersøgelse du skal have og tryk accepter for at bestille din tid
     </div>
-<form action="servertest" method="add">
+<!-- <form action="servertest" method="add"> -->
     <div id="container2">
         <b> Vælg dato </b>
         <br>
         <div>
-        <input id="datePicker" name="dato">
+        <input id="datePicker1" name="dato">
         </div>
         <br>
         <b> Vælg tidspunkt </b>
@@ -166,7 +166,7 @@
             <input  type="submit" value="Accepter"/> </b>
         </a>
     </div>
-</form>
+<!-- </form> -->
 <br>
     <div id="container4">
         <a href="AendreTid.jsp">
