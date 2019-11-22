@@ -1,6 +1,6 @@
 package Data;
 
-public class Appointment {
+/* public class Appointment {
     private String Type;
     private String Sygehus;
     private String Dato;
