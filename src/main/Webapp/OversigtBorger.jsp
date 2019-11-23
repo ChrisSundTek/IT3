@@ -109,7 +109,7 @@
 <hr style="height: 5px; border: 0px solid #000000; border-top-width: 1px;" />
     <h4 style="color:#000000;"> <b> Bestil tid </b> </h4>
     <div id="container1">
-        Bestil tid ved at vælge dato, tid, hospital og hvilken undersøgelse du skal have og tryk accepter for at bestille din tid
+        Forespørg tid
     </div>
 <!-- <form action="servertest" method="add"> -->
     <div id="container2">

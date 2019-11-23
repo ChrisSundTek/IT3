@@ -38,23 +38,4 @@ public class Servertest extends HttpServlet {
             resp.sendRedirect("BorgerLogIn.jsp");
         }
     }
-
-  /*  @Override
-    protected void doAdd(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String patient = req.getParameter("CPR");
-        String undersoegelse = req.getParameter("undersøgelse");
-        String dato = req.getParameter("dato" + "tid");
-        String hospital = req.getParameter("hospital");
-
-        boolean create = false;
-        try {
-            create = DB.CreateApp(patient, undersoegelse, dato, hospital);
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        if (create) {
-
-        } else {
-            resp.sendRedirect("BorgerLogIn.jsp");
-        } */
-    }
+}

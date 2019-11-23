@@ -66,33 +66,6 @@ public class DB {
         return false;
     }
 
-  /*  public static Boolean CreateApp() throws SQLException, ClassNotFoundException {
-        Class.forName("org.mariadb.jdbc.Driver");
-        Connection connection = DriverManager.getConnection("jdbc:mariadb://su6.eduhost.dk:3306/db6?user=christoffer&password=zaq12wsx");
-        Statement statement = connection.createStatement();
-        int i = statement.executeUpdate("insert into Aftale values (patient,undersoegelse,dato,sygehus)");
-        System.out.println("Data is successfully inserted!");
-        try {
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-        /*ResultSet resultSet = statement.executeQuery("INSERT * INTO Aftaler;");
-        //(Patient,Undersoegelse,Dato,Sygehys)Values = ('"+patient+"','"+undersøgelse+"','"+dato & tid+"','"+sygehus+"')");
-        String patient = resultset.get("Patient");
-        String undersoegelse = resultset.getString("Type");
-        String Dato = resultset.getString("Dato");
-        String Tid = resultset.getString("Dato");
-        String Sygehus = resultset.getString("Sygehus");
-        connection.close();
-        System.out.println("Jeg Opretter");
-         if (cpr.equals(c) && password.equals(p)) {
-            return true;
-        }
-        return false;
-    } */
-
     private static List<Patient> parseResultsetToPatient(ResultSet resultSet) throws SQLException {
         List<Patient> patients = new ArrayList<>();
         while (resultSet.next()) {
