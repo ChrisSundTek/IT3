@@ -92,6 +92,81 @@
         </tbody>
     </table>
 </h4>
+</h4>
+<hr style="height: 5px; border: 0px solid #000000; border-top-width: 1px;" />
+<h4 style="color:#000000;"> <b> Bestil tid </b> </h4>
+<div id="container1">
+    Forespørg tid
+</div>
+<!-- <form action="servertest" method="add"> -->
+<div id="container2">
+    <b> Vælg dato </b>
+    <br>
+    <div>
+        <input id="datePicker1" name="dato">
+    </div>
+    <br>
+    <b> Vælg tidspunkt </b>
+    <br>
+    <div>
+        <input id="timePicker1" name="tid">
+    </div>
+    <form>
+        <p>
+            <br>
+            <label>Hospital
+                <br>
+                <select id="hospital" name="hospital">
+                    <option value="" selected="selected">Vælg hospital</option>
+                    <option value="4"> Hospital 4</option>
+                    <option value="6"> Hospital 6</option>
+                </select>
+            </label>
+        </p>
+    </form>
+</div>
+<div>
+    <form>
+        <p>
+            <label>Undersøgelse
+                <br>
+                <select id="undersøgelse" name="undersøglese">
+                    <option value="" selected="selected">Vælg Undersøgelse</option>
+                    <option value="BIOPSI"> Vævsprøve </option>
+                    <option value="BP"> Blodprøve </option>
+                    <option value="CT"> CT scanning </option>
+                    <option value="EEG"> Elektroencefalografi </option>
+                    <option value="EKG"> Elektrokardiografi </option>
+                    <option value="ENDOSP"> Endoskopi </option>
+                    <option value="MR"> MR scanning </option>
+                    <option value="PetCT"> Pet og CT scanning </option>
+                    <option value="RTG"> Røntgen </option>
+                    <option value="ULSC"> Ultralyd </option>
+                </select>
+            </label>
+        </p>
+    </form>
+</div>
+<br>
+<div id="container3">
+    <a href="BekraeftelseOversigt.jsp"> <b>
+        <input  type="submit" value="Accepter"/> </b>
+    </a>
+</div>
+<!-- </form> -->
+<br>
+<div id="container4">
+    <a href="AendreTid.jsp">
+        <button id="button2">Ændre eksisterende booking</button>
+    </a>
+</div>
+</body>
+<br>
+    <div id="container11">
+        <a href="index.html">
+            <button id="button11"> <font size="+0">Log ud </font> </button>
+        </a>
+    </div>
 </div>
 
 </body>

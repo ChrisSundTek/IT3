@@ -66,6 +66,20 @@ public class DB {
         return false;
     }
 
+    public static Boolean Remover(String dato) throws SQLException, ClassNotFoundException {
+        Class.forName("org.mariadb.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mariadb://su6.eduhost.dk:3306/db6?user=christoffer&password=zaq12wsx");
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery("DELETE * FROM Aftale WHERE Dato ='"+ dato +"';");
+        resultSet.next();
+        String d = resultSet.getString("dato");
+        connection.close();
+        if (dato.equals(d)) {
+            return true;
+        }
+        return false;
+    }
+
     private static List<Patient> parseResultsetToPatient(ResultSet resultSet) throws SQLException {
         List<Patient> patients = new ArrayList<>();
         while (resultSet.next()) {
