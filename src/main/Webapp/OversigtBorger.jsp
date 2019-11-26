@@ -97,8 +97,8 @@
             <p>
                 <label>Tid:
                     <select id="tid" name="Tid">
-                        <option value="" selected="selected">Tid1</option>
-                        <option value="<% out.println("123"); %>" >Tid2</option>
+                        <option value="" selected="selected">Vælg tid</option>
+                        <option value="<% out.println("dato"); %>" ></option>
                         <option value="" >Tid3</option>
                         <option value="" >Tid4</option>
                     </select>

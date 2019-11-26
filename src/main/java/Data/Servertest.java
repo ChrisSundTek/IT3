@@ -38,13 +38,14 @@ public class Servertest extends HttpServlet {
             resp.sendRedirect("BorgerLogIn.jsp");
         }
     }
-    @Override
+
+    /* @Override
     protected void doRemove(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String Dato = req.getParameter("Dato");
         boolean remover = false;
         try {
             remover = DB.Remover(Dato);
-        } catch (SQLException  | ClassNotFoundException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         if (remover) {
@@ -52,4 +53,5 @@ public class Servertest extends HttpServlet {
         } else {
             resp.sendRedirect("OversigtBorger.jsp");
         }
+    } */
 }
