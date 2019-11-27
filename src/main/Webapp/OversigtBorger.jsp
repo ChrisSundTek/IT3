@@ -78,10 +78,9 @@
             <td> <% out.print(Fritekst); %> </td>
             <td> <% out.println(Type); %> </td>
             <td> <% out.print(Varighed);%> </td>
-
         </tr>
-        <% }%>
         </tbody>
+        <% }%>
     </table>
     <h2> <b> Aflys tid </b> </h2>
 
@@ -93,21 +92,33 @@
         <p id="text2">Vælg din tid</p>
     </div>
     <div id="container4">
-        <form>
+        <form action="servertest" method="get">
             <p>
                 <label>Tid:
-                    <select id="tid" name="Tid">
-                        <option value="" selected="selected">Vælg tid</option>
-                        <option value="<% out.println("dato"); %>" ></option>
-                        <option value="" >Tid3</option>
-                        <option value="" >Tid4</option>
+                    <input id="cpr" name ="cpr" value="<%=cpr%>" hidden />
+                    <select id="Tid" name="Tid">
+                        <option selected="selected">Vælg tid du vil aflyse</option>
+                        <% List<Aftale> tid = DB.getAftale(cpr);
+                            /* System.out.println(aftaler.size()); */
+                            for(int t=0; t<tid.size(); t++) {
+                                Aftale tiden = tid.get(t);
+                                String Dato = tiden.getDato();
+                        %>
+                        <option value="<%=Dato%>"> <% out.println(Dato); %> </option>
+                        <% } %>
                     </select>
                 </label>
             </p>
-        </form>
-    </div>
-    <div style="margin:10px;" id="container5">
+    <br>
         <b> <input  type="submit" value="Aflys"/> </b>
+</form>
     </div>
+<footer>
+    <div id="container6">
+        <a href="index.html">
+            <button id="button4">Log ud</button>
+        </a>
+    </div>
+</footer>
 </body>
 </html>

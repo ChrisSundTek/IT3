@@ -14,8 +14,15 @@ public class Servertest extends HttpServlet {
     DB db = new DB();
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().write("Farvel" + req.getRequestURI());
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp){
+        try{
+        String dato =  req.getParameter("Tid");
+            String cpr = req.getParameter("cpr");
+        db.Slet(cpr, dato);
+        resp.sendRedirect("OversigtBorger.jsp?cpr="+cpr);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
     }
 
     @Override
@@ -39,19 +46,11 @@ public class Servertest extends HttpServlet {
         }
     }
 
-    /* @Override
-    protected void doRemove(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String Dato = req.getParameter("Dato");
-        boolean remover = false;
-        try {
-            remover = DB.Remover(Dato);
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        if (remover) {
-            resp.sendRedirect("BorgerLogin.jsp");
-        } else {
-            resp.sendRedirect("OversigtBorger.jsp");
-        }
+
+  /*  public void aftaleFjern(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException, ClassNotFoundException {
+        DB.Slet(req.getParameter("Dato"));
+        String cpr = req.getParameter("cpr");
+        resp.sendRedirect("OversigtBorger.jsp?cpr="+cpr);
+
     } */
 }

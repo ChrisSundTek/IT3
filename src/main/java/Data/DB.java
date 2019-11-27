@@ -66,18 +66,18 @@ public class DB {
         return false;
     }
 
-    public static Boolean Remover(String dato) throws SQLException, ClassNotFoundException {
-        Class.forName("org.mariadb.jdbc.Driver");
-        Connection connection = DriverManager.getConnection("jdbc:mariadb://su6.eduhost.dk:3306/db6?user=christoffer&password=zaq12wsx");
-        Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery("DELETE * FROM Aftale WHERE Dato ='"+ dato +"';");
-        resultSet.next();
-        String d = resultSet.getString("dato");
-        connection.close();
-        if (dato.equals(d)) {
+    public static Boolean Slet(String cpr, String dato) throws SQLException, ClassNotFoundException {
+        try {
+            Class.forName("org.mariadb.jdbc.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:mariadb://su6.eduhost.dk:3306/db6?user=christoffer&password=zaq12wsx");
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("DELETE FROM Aftale WHERE patient='" + cpr + "' AND Dato ='" + dato + "';");
+            connection.close();
             return true;
         }
-        return false;
+        catch(Exception ex) {
+            return false;
+        }
     }
 
     private static List<Patient> parseResultsetToPatient(ResultSet resultSet) throws SQLException {
