@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="http://designer.igniteui.com/css/themes/infragistics/infragistics.theme.css">
     <link rel="stylesheet" href="http://designer.igniteui.com/css/structure/infragistics.css">
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="Baggrund.css" rel="stylesheet" type="text/css">
     <!--
         Update the Ignite UI script references to your licensed copies before deploying.
         Ignite UI License: http://www.infragistics.com/legal/license/ultimate/
@@ -33,9 +33,6 @@
 
         });
     </script>
-
-
-
 
 </head>
 <body>

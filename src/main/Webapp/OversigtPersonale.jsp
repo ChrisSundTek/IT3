@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="http://designer.igniteui.com/packages/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="http://designer.igniteui.com/css/themes/infragistics/infragistics.theme.css">
     <link rel="stylesheet" href="http://designer.igniteui.com/css/structure/infragistics.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link href="Baggrund.css" rel="stylesheet" type="text/css">
     <!--
         Update the Ignite UI script references to your licensed copies before deploying.
         Ignite UI License: http://www.infragistics.com/legal/license/ultimate/
@@ -38,7 +39,7 @@
 <h1 style="margin:10px;"> <b> Velkommen <i> PersonaleID</i> </b> </h1>
 <div id="row1" class="row">
     <div class="col-md-3">
-        <button id="button1"> <font size="+1">Se Patient Journaler </font> </button>
+        <button id="button1"> <font size="+1">Se Journaler </font> </button>
     </div>
     <div class="col-md-2">
         <button id="button2"> <font size="+1"> Kalender </font> </button>

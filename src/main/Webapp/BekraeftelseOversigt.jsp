@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="http://designer.igniteui.com/packages/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="http://designer.igniteui.com/css/themes/infragistics/infragistics.theme.css">
     <link rel="stylesheet" href="http://designer.igniteui.com/css/structure/infragistics.css">
+
+    <link href="Baggrund.css" rel="stylesheet" type="text/css">
+
     <!--
         Update the Ignite UI script references to your licensed copies before deploying.
         Ignite UI License: http://www.infragistics.com/legal/license/ultimate/
@@ -26,18 +29,7 @@
     <script src="http://designer.igniteui.com/js/infragistics.lob.js"></script>
     <!-- You may remove the datasources.js script if you are not using Designer sample data. -->
     <script src="http://designer.igniteui.com/js/datasources.js"></script>
-    <script id="code">
-        $(document).ready(function () {
 
-        });
-    </script>
-    <style>
-        body {
-            background-color: #D7FBFF;
-            margin:10px;
-        }
-        <!-- ved at tilføje style og body kan man ændre baggrunds farve -->
-    </style>
 </head>
 <body>
 <h2 id="heading1"> <b> #Patientnavn </b></h2>

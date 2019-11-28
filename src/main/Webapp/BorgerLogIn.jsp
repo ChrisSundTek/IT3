@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Christoffer
+  User: chris
   Date: 13-11-2019
   Time: 21:59
   To change this template use File | Settings | File Templates.
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="http://designer.igniteui.com/css/structure/infragistics.css">
 
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="Baggrund.css" rel="stylesheet" type="text/css">
     <!--
         Update the Ignite UI script references to your licensed copies before deploying.
         Ignite UI License: http://www.infragistics.com/legal/license/ultimate/
@@ -35,47 +35,32 @@
         });
     </script>
 
-
-    <script>
-        function passvalues() {
-            var navn = document.getElementById("input1").value;
-            localStorage.setItem("textvalue",navn);
-            return false;
-        }
-    </script>
-    <script type= "text/javascript">
-        function login() {
-            var navn = document.getElementById("Navn").value;
-            var kode = document.getElementById("password").value;
-            if( navn== "lab18" && kode == "lab18") {
-                alert("Login Godkendt")
-                locate="OversigtPersonale.jsp"
-                return false;
-            } else {
-                alert("Forkert brugernavn/password");
-                return false;
-            }
-
-        }
-    </script>
-
-
 </head>
 <body>
 <h1 id="heading1"> <b> Velkommen til login </b> </h1>
 <div id="container3">
     <form action="servertest" method="post">
-        <input id="CPRnummer" type="number" placeholder="Indtast CPR" name="CPR" required/>
-        <input id="password" type="password" placeholder="Indtast Password" name="Password" required/>
-        <input type="submit" value="Submit">
-    </form>
 
+    CPR-NUMMER:<br>
+    <input type="number" id="CPRnummer" placeholder="CPR" required name="CPR" />
+    <br>
+        <br>
+        PASSWORD:
+        <br>
+    <input id="password" type="password" placeholder="Password" name="Password" required />
+        <br>
+    <input style="margin-top:20px" font size="+1" type="submit" value="Log ind"/>
+
+    </form>
 </div>
 </body>
 <footer>
+    <br>
+    <br>
+    <br>
     <div id="container2">
-        <a href="Forside.jsp">
-            <button id="button4" style="margin:45px;"> <font size="+0">Tilbage til forsiden </font> </button>
+        <a href="index.html">
+            <button id="button4"> <font size="+0">Tilbage til forsiden </font> </button>
         </a>
     </div>
 </footer>
