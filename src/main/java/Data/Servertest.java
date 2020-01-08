@@ -45,12 +45,4 @@ public class Servertest extends HttpServlet {
             resp.sendRedirect("BorgerLogIn.jsp");
         }
     }
-
-
-  /*  public void aftaleFjern(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException, ClassNotFoundException {
-        DB.Slet(req.getParameter("Dato"));
-        String cpr = req.getParameter("cpr");
-        resp.sendRedirect("OversigtBorger.jsp?cpr="+cpr);
-
-    } */
 }

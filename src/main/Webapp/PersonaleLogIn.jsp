@@ -38,8 +38,8 @@
 <body>
 <h1 id="heading1" style="color:#000000;"> <b> Personale </b> </h1>
 <div id="container1">
-    <h5>autorisationsID:</h5>
-    <input id="input1" placeholder="Indtast ID" name="CPR" required/>
+    <h5>AutorisationID:</h5>
+    <input id="input1" placeholder="Indtast ID" name="AutorisationID" required/>
 </div>
 <div id="container2">
     <h5>Adgangskode:</h5>
