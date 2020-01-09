@@ -32,6 +32,27 @@
     <script src="http://designer.igniteui.com/js/infragistics.lob.js"></script>
     <!-- You may remove the datasources.js script if you are not using Designer sample data. -->
     <script src="http://designer.igniteui.com/js/datasources.js"></script>
+    <script id="code">
+        $(document).ready(function () {
+            $("#datePicker1").igDatePicker({
+                dateDisplayFormat: "d/M/yyyy",
+                dataMode: "displayModeText",
+                minDate: "dateToday",
+            });
+            $("#timePicker1").igTimePicker({
+                timeInputFormat: "HH:mm",
+                itemsDelta: {
+                    minutes: 15
+                },
+                dropDownOnReadOnly: false,
+                buttonType: "dropdown",
+                "maxValue": "16:45",
+                "minValue": "08:00",
+                toUpper: false
+            });
+
+        });
+    </script>
     <%  DB db = new DB();
 
     %>

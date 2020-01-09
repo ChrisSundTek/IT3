@@ -48,6 +48,7 @@
     <a href="OversigtPersonale.jsp">
         <button type="submit" style="margin-top:10px">Log ind</button>
     </a>
+</form>
 </div>
 </body>
 <footer>
