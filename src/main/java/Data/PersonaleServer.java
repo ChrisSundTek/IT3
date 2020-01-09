@@ -8,14 +8,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class PersonaleServer {
-
-
-    @WebServlet("/Personaleserver")
+    @WebServlet("/personaleserver")
     public class PersonaleServer extends HttpServlet {
         PersonaleDB personaledb = new PersonaleDB();
 
-        @Override
+       /* @Override
         protected void doGet(HttpServletRequest req, HttpServletResponse resp){
             try{
                 String dato =  req.getParameter("Tid");
@@ -25,7 +22,7 @@ public class PersonaleServer {
             }catch (Exception ex){
                 ex.printStackTrace();
             }
-        }
+        } */
 
         @Override
         protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -40,10 +37,9 @@ public class PersonaleServer {
             }
             //System.out.println("her kommer brugeren med cpr "+ CPR + " password " + Password);
             if (validering) {
-                resp.sendRedirect("OverPersonale.jsp?id=\" + AutorasitionID);
+                resp.sendRedirect("OverPersonale.jsp?id=" + AutorasitionID);
             } else {
                 resp.sendRedirect("PersonaleLogIn.jsp");
             }
         }
     }
-}

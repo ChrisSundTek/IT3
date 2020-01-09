@@ -37,15 +37,14 @@
 </head>
 <body>
 <h1 id="heading1" style="color:#000000;"> <b> Personale </b> </h1>
-<div id="container1">
+<div>
+<form action="Personaleserver" method="post">
     <h5>AutorisationID:</h5>
     <input id="input1" placeholder="Indtast ID" name="AutorisationID" required/>
-</div>
-<div id="container2">
+<br>
     <h5>Adgangskode:</h5>
     <input id="input2" type="password" placeholder="Indtast Password" name="Password" required/>
-</div>
-<div id="container3">
+<br>
     <a href="OversigtPersonale.jsp">
         <button type="submit" style="margin-top:10px">Log ind</button>
     </a>

@@ -11,14 +11,14 @@ public class PersonaleDB {
     public static void main (String[] args) {
         try {
             getPersonale();
-            getAftale("");
+            //getAftale("");
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
-    public static List<Patient> getPersonale() throws SQLException, ClassNotFoundException {
+    public static List<Personale> getPersonale() throws SQLException, ClassNotFoundException {
         Class.forName("org.mariadb.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mariadb://su6.eduhost.dk:3306/db6?user=christoffer&password=zaq12wsx");
         Statement statement = connection.createStatement();
@@ -47,12 +47,12 @@ public class PersonaleDB {
         List<Personale> personalet = new ArrayList<>();
         while (resultSet.next()) {
             Personale personale = new Personale();
-            String id = resultSet.getString("AutorasitionID");
+            String id = resultSet.getString("AutorisationID");
             String fornavn = resultSet.getString("Fornavn");
             personale.setAutorasitionID(id);
             personale.setFornavn(fornavn);
             personalet.add(personale);
-            System.out.println("Patient " + fornavn + " " + id);
+            System.out.println("Personale " + fornavn + " " + id);
         }
         return personalet;
     }

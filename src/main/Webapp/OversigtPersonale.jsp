@@ -37,18 +37,12 @@
 </head>
 <body>
 <h1 style="margin:10px;"> <b> Velkommen <i> PersonaleID</i> </b> </h1>
-<div id="row1" class="row">
-    <div class="col-md-3">
-        <button id="button1"> <font size="+1">Se Journaler </font> </button>
-    </div>
-    <div class="col-md-2">
+    <div>
         <button id="button2"> <font size="+1"> Kalender </font> </button>
     </div>
-    <div class="col-md-2">
+    <div">
         <button id="button3"> <font size="+1"> Send indkaldelser </font> </button>
     </div>
-</div>
-
 </body>
 <footer>
     <div id="container2">
